@@ -23,13 +23,7 @@ var del      = require('del'),
 
 	// 환경설정 ./config.js
 	config   = require('./config')();
-
-// sass패스 별도 설정
-var sass = {
-	src       : 'src/sass/**/*.{scss,sass}',
-	compassSrc: 'src/sass',
-	dest      : 'dist/css'
-}
+	
 /**
  * Gulp 업무(Tasks) 정의
  */
@@ -44,7 +38,7 @@ gulp.task('watch', [], function(){
 		gulp.start('template');
 	});
 	// Sass 업무 관찰
-	watch(sass.src, function() {
+	watch(config.sass.src, function() {
 		gulp.start('compass');
 	});
 });
@@ -67,12 +61,12 @@ gulp.task('template', function(){
 });
 
 gulp.task('compass', function() {
-	gulp.src( sass.src )
+	gulp.src( config.sass.src )
 			.pipe( plumber() )
 			.pipe( compass({
-				css : sass.dest,
-				sass: sass.compassSrc
+				css : config.sass.dest,
+				sass: config.sass.compassSrc
 			}) )
-			.pipe( gulp.dest( sass.dest ) )
+			.pipe( gulp.dest( config.sass.dest ) )
 			.pipe( connect.reload() );
 });

@@ -13,11 +13,11 @@ module.exports = function() {
 		},
 
 		// Sass 경로
-//		sass = {
-//			src       : source + '/sass/**/*.{scss,sass}',
-//			compassSrc: source + '/sass',
-//			dest      : development + '/css'
-//		},
+		sass = {
+			src       : source + '/sass/**/*.{scss,sass}',
+			compassSrc: source + '/sass',
+			dest      : development + '/css'
+		},
 
 		// HTML Prettify 옵션
 //		htmlPrettify = {
@@ -40,6 +40,7 @@ module.exports = function() {
 		src  : source,
 		dev  : development,
 		sev  : server,
-		jade : template 
+		jade : template,
+		sass : sass
 	};
 };
