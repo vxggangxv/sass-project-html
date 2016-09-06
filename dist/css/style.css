@@ -1,7 +1,45 @@
-div {
-  width: 500px;
+@charset "UTF-8";
+html {
+  overflow-y: scroll;
+  font-size: 10px;
+}
+
+/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
+body {
+  /* 1.4rem = 10px * 1.4 = 14px */
+  font: 1.4rem/1.5 "Nanum Gothic", Sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#page {
+  width: 94rem;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #eee;
-  text-align: center;
+}
+#page .article {
+  position: relative;
+}
+#page .container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#page .container .divide-half {
+  float: left;
+  width: 50%;
+}
+
+#page a {
+  text-decoration: none;
+  color: #069aea;
+}
+#page a:hover {
+  padding-bottom: 0.1rem;
+  border-bottom: 1px dashed;
+  color: #023855;
+}
+
+.rgba #page a {
+  color: rgba(6, 154, 234, 0.8);
 }

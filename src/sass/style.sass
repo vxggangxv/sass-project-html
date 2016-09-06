@@ -1,6 +1,42 @@
-div
-	width: 500px
+@charset "utf-8"
+// Sass 한줄 주석
+// css 코드로 변경될 때, 해석되지 않습니다.
+html
+	overflow-y: scroll
+	// rem 단위 기준 값 설정
+	font-size: 10px
+	
+/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
+body
+	/* 1.4rem = 10px * 1.4 = 14px */
+	font: 1.4rem/1.5 "Nanum Gothic", Sans-serif
+
+
+*, *::before, *::after
+	box-sizing: border-box
+
+
+#page
+	width: 94rem
 	margin: 0 auto
-	padding: 20px
-	border: 1px solid #eee
-	text-align: center
+	.article 
+		position: relative
+	
+	.container 
+		padding-left: 5%
+		padding-right: 5%
+		.divide-half 
+			float: left
+			width: 50%
+
+#page a
+	text-decoration: none
+	color: #069aea
+	&:hover
+		padding-bottom: 0.1rem
+		border-bottom: 1px dashed
+		color: #023855
+
+#page a
+	.rgba &
+		color: rgba(6, 154, 234, 0.8)
