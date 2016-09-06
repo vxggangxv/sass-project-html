@@ -19,6 +19,12 @@ module.exports = function() {
 			dest      : development + '/css'
 		},
 
+		/// JS 경로
+		js = {
+			src : source + '/js/**/*.js',
+			dest: development + '/js'
+		},
+
 		// HTML Prettify 옵션
 //		htmlPrettify = {
 //			"indent_char": " ",
@@ -36,11 +42,12 @@ module.exports = function() {
 		};
 
 	return {
-		del  : remove,
-		src  : source,
-		dev  : development,
-		sev  : server,
-		jade : template,
-		sass : sass
+		del : remove,
+		src : source,
+		dev : development,
+		sev : server,
+		jade: template,
+		sass: sass,
+		js  : js
 	};
 };

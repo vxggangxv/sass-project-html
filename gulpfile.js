@@ -29,7 +29,7 @@ var del      = require('del'),
  */
 
 // 기본
-gulp.task('default', ['template', 'compass', 'connect', 'watch']);
+gulp.task('default', ['template', 'compass', 'js', 'connect', 'watch']);
 
 // 관찰
 gulp.task('watch', [], function(){
@@ -44,8 +44,8 @@ gulp.task('watch', [], function(){
 });
 
 // 제거
-gulp.task('clean', function(cb){
-	del(config.del, cb);
+gulp.task('clean', function(){
+	del(config.dev);
 });
 
 // 웹 서버
@@ -62,11 +62,18 @@ gulp.task('template', function(){
 
 gulp.task('compass', function() {
 	gulp.src( config.sass.src )
-			.pipe( plumber() )
-			.pipe( compass({
-				css : config.sass.dest,
-				sass: config.sass.compassSrc
-			}) )
-			.pipe( gulp.dest( config.sass.dest ) )
-			.pipe( connect.reload() );
+		.pipe( plumber() )
+		.pipe( compass({
+			css : config.sass.dest,
+			sass: config.sass.compassSrc
+		}) )
+		.pipe( gulp.dest( config.sass.dest ) )
+		.pipe( connect.reload() );
+});
+
+gulp.task('js', function(){
+	gulp.src(config.js.src)
+		.pipe( plumber() )
+		.pipe( gulp.dest(config.js.dest) )
+		.pipe( connect.reload() );
 });
