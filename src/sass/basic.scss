@@ -1,0 +1,19 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+#page {
+	width: 94rem;
+	margin: 0 auto;
+	.article {
+		position: relative;
+	}
+	.container {
+		padding-left: 5%;
+		padding-right: 5%;
+		.divide-half {
+			float: left;
+			width: 50%;
+		}
+	}
+}
