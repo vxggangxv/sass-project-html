@@ -1,13 +1,48 @@
 @charset "UTF-8";
+/* Comments */
+/* @charset "utf-8" 필수 */
+body.very-light-theme {
+  background: #f8c9d6;
+  color: #073629;
+}
+
+.container {
+  width: 940px;
+  margin-top: auto;
+}
+.container::before, .container::after {
+  content: "";
+  display: table;
+}
+.container::after {
+  clear: both;
+}
+.lt-ie8 .container {
+  zoom: 1;
+}
+
+/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
 html {
   overflow-y: scroll;
   font-size: 10px;
 }
 
-/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
+body * {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 body {
   /* 1.4rem = 10px * 1.4 = 14px */
-  font: 1.4rem/1.5 "Nanum Gothic", Sans-serif;
+  font: 1.4rem/1.5 "Nanum Gothic", Dotum, Sans-serif;
+  color: #382f1f;
+  background-color: #f8c9d6;
 }
 
 *, *::before, *::after {
@@ -42,4 +77,66 @@ body {
 
 .rgba #page a {
   color: rgba(6, 154, 234, 0.8);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 94rem;
+}
+.container::before, .container::after {
+  content: "";
+  display: table;
+}
+.container::after {
+  clear: both;
+}
+.lt-ie8 .container {
+  zoom: 1;
+}
+
+.button {
+  background-color: #34ace0;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px;
+}
+
+.button-checkout, .button-checkin {
+  background-color: #34ace0;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px;
+}
+
+.button-checkout {
+  border-color: #cecece;
+}
+
+.button-checkin {
+  border-color: #e769a2;
+}
+
+.test {
+  color: #fff;
+}
+
+.login-box {
+  position: absolute;
+  left: 20px;
+  width: 320px;
+  height: 114px;
+  -webkit-transition: width 0.2s height 0.4s ease-out;
+  transition: width 0.2s height 0.4s ease-out;
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  width: 24rem;
+  height: 10rem;
 }

@@ -65,7 +65,8 @@ gulp.task('compass', function() {
 		.pipe( plumber() )
 		.pipe( compass({
 			css : config.sass.dest,
-			sass: config.sass.compassSrc
+			sass: config.sass.compassSrc,
+			style: 'expanded' // nested, expanded, compact, compressed
 		}) )
 		.pipe( gulp.dest( config.sass.dest ) )
 		.pipe( connect.reload() );

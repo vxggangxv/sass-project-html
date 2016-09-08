@@ -1,16 +1,35 @@
 @charset "utf-8"
+
+// Compass 라이브러리 CSS3 믹스인 호출
+@import "compass/css3"
+// Comments 주석
+@import "parts/comments"
+// Sass 변수 (Variables: $)
+@import "parts/variables"
+// Sass 믹스인(Mixins)
+@import "parts/mixins"
+// Sass 조건문
+@import "parts/condition"
+
 // Sass 한줄 주석
 // css 코드로 변경될 때, 해석되지 않습니다.
+/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
 html
 	overflow-y: scroll
 	// rem 단위 기준 값 설정
 	font-size: 10px
-	
-/* sass 여러줄 주석 CSS 코드로 변경될 때, 해석됩니다. */
+
+body *
+	+reset-box-model
+table
+	+reset-table
+
 body
 	/* 1.4rem = 10px * 1.4 = 14px */
-	font: 1.4rem/1.5 "Nanum Gothic", Sans-serif
-
+	font: 1.4rem/1.5 $gothic
+	color: $fg-color
+	background-color: $bg-color
+	
 
 *, *::before, *::after
 	box-sizing: border-box
@@ -40,3 +59,51 @@ body
 #page a
 	.rgba &
 		color: rgba(6, 154, 234, 0.8)
+
+.container
+	margin: 
+		left: auto
+		right: auto
+	width: 94rem
+	// 마이크로 클리어픽스(Micro Clearfix)
+	&::before, &::after
+		content: ''
+		display: table
+	&::after
+		clear: both
+	.lt-ie8 &
+		zoom: 1
+
+// 버튼 공통 모듈 CSS에서 해석됨
+.button
+	background-color: #34ace0
+	font-weight: bold
+	color: #fff
+	padding: 5px
+// 버튼 공통 모듈 CSs에서 해석되지 않음
+%button
+	background-color: #34ace0
+	font-weight: bold
+	color: #fff
+	padding: 5px
+// 체크아웃 버튼
+.button-checkout
+	@extend %button
+	border-color: #cecece
+// 체크인 버튼
+.button-checkin
+	@extend %button
+	border-color: #e769a2
+
+.test
+	color: #fff
+
+.login-box
+	+position($type:absolute, $left:20px)
+	+size(320px, 114px)
+	+transition(width 0.2s height 0.4s ease-out)
+	+transform(scale(1.5))
+
+.notification
+	+position(fixed, 20px)
+	+size(24rem, 10rem)
