@@ -1,0 +1,58 @@
+@charset "utf-8"
+//----------------------------------
+/* 960 그리드 시스템(Grid-System) */
+//----------------------------------
+
+// 페이지 폭
+$page-width: 960px
+// 컬럼 개수
+$columns: 16
+// 거터
+$gutter: 20px
+// 컬럼 폭
+$col-width: ( ($page-width - $gutter) - ($gutter * ($columns - 1) ) ) / $columns
+// 반복자
+$i: 1
+
+%col
+	float: left
+	margin-right: $gutter
+
+// ------------------------------------------
+// @while 구문
+// ------------------------------------------
+// @while $i <= $columns
+//	.col-#{$i}
+//		@extend %col
+//		width: ($col-width * $i) + ($gutter * ($i - 1))
+	// $i 반복자 값 1 증가
+//	$i: $i + 1 
+
+// ------------------------------------------
+// @for 구문
+// from ~ through (~까지)
+// from ~ to (~전까지)
+// ------------------------------------------
+@for $i from 1 through $columns
+	.col-#{$i}
+		@extend %col
+		width: ($col-width * $i) + ($gutter * ($i - 1))
+
+// ------------------------------------------
+/* 아이콘(Icon) 설정 */
+// ------------------------------------------
+@each $item, $w, $h in (git, 24px, 24px), (nodejs, 32px, 32px), (gulpjs, 24px, 24px), (jade, 16px, 16px)
+	.icon-#{$item}
+		background-image: url("images/#{$item}.png")
+		width: $w
+		height: $h
+
+// ------------------------------------------
+/* 제목(Heading) 설정 */
+// ------------------------------------------
+// @each $H in (h1:3rem, h2:2rem, h3:1.7rem, h4:1.5rem, h5:1.3rem, h6:1rem)
+//	#{nth($H,1)}
+//		font-size: nth($H,2) 
+@each $heading, $size in (h1:3rem, h2:2rem, h3:1.7rem, h4:1.5rem, h5:1.3rem, h6:1rem)
+	#{$heading}
+		font-size: $size
