@@ -1,0 +1,43 @@
+{
+	"name": "susy-project-html",
+	"version": "0.0.1",
+	"authors": ["joon9 <vxggangxv@naver.com>"],
+	"moduleType": ["node"],
+	"keywords": ["susy"],
+	"homepage": "http://toxnsldxn.cafe24.com",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"susy": "~2.2.2",
+		"fontawesome": "~4.3.0",
+		"modernizr": "~3.3.1",
+		"detectizr": "~2.0.0",
+		"jquery": "~2.1.3"
+	},
+	"preen": {
+
+		"jquery": [
+			"dist/*.js"
+		],
+		"susy": [
+			"sass/**"
+		],
+		"modernizr": [
+			"modernizr"
+		],
+		"detectizr": [
+			"dist/*.js"
+		],
+		"fontawesome": [
+			"css/**",
+			"fonts/**",
+			"scss/**"
+		]
+
+	}
+}

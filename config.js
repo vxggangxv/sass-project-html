@@ -2,8 +2,8 @@ module.exports = function() {
 
 	var source       = 'src',
 		development  = 'dist',
-		build        = 'build',
-		remove       = [],
+		bower_path   = 'bower_components',
+		remove       = ['.sass-cache', 'dist'],
 
 		// 템플릿 경로
 		template = {
@@ -19,10 +19,30 @@ module.exports = function() {
 			dest      : development + '/css'
 		},
 
-		/// JS 경로
+		// JS 경로
 		js = {
 			src : source + '/js/**/*.js',
 			dest: development + '/js'
+		},
+
+		// Bower 설정
+		bower = {
+			susy: {
+				src: bower_path + '/susy/sass/**',
+				dest: source + '/sass/susy'
+			},
+			fontawesome: {
+				src: bower_path + '/fontawesome/**',
+				dest: source + '/sass/fontawesome'
+			},
+			others: {
+				src: [
+					bower_path + '/**',
+					'!' + bower_path + '/{susy, susy/**}',
+					'!' + bower_path + '/{fontawesome, fontawesome/**}'
+				],
+				dest: development + '/js/libs'
+			}
 		},
 
 		// HTML Prettify 옵션
@@ -42,12 +62,15 @@ module.exports = function() {
 		};
 
 	return {
-		del : remove,
-		src : source,
-		dev : development,
-		sev : server,
-		jade: template,
-		sass: sass,
-		js  : js
+		del  : remove,
+		src  : source,
+		dev  : development,
+		rev  : remove,
+		sev  : server,
+
+		bower: bower,
+		jade : template,
+		sass : sass,
+		js   : js
 	};
 };

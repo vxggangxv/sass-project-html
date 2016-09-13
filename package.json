@@ -16,6 +16,7 @@
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
     "gulp-util": "^3.0.1",
-    "gulp-watch": "^3.0.0"
+    "gulp-watch": "^3.0.0",
+    "preen": "^1.2.0"
   }
 }

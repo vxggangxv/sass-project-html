@@ -20,6 +20,7 @@ var del      = require('del'),
 	watch    = require('gulp-watch'),
 	prettify = require('gulp-html-prettify'),
 	connect  = require('gulp-connect-multi')(),
+	preen		 = require('preen'),
 
 	// 환경설정 ./config.js
 	config   = require('./config')();
@@ -30,6 +31,7 @@ var del      = require('del'),
 
 // 기본
 gulp.task('default', ['template', 'compass', 'js', 'connect', 'watch']);
+gulp.task('prepare', ['preen', 'bower:copy']);
 
 // 관찰
 gulp.task('watch', [], function(){
@@ -46,6 +48,22 @@ gulp.task('watch', [], function(){
 // 제거
 gulp.task('clean', function(){
 	del(config.dev);
+});
+// Bower 패키지에서 필요한 파일만 골라내기(Preen)
+gulp.task('preen', function(cb) {
+	preen.preen({}, cb);
+});
+// Bower 패키지 복사
+gulp.task('bower:copy', function() {
+	// susy
+	gulp.src(config.bower.susy.src)
+		.pipe( gulp.dest(config.bower.susy.dest) );
+	// fontawesome
+	gulp.src(config.bower.fontawesome.src)
+		.pipe( gulp.dest(config.bower.fontawesome.dest) );
+	// jquery, modernizr, detectizr
+	gulp.src(config.bower.others.src)
+		.pipe( gulp.dest(config.bower.others.dest) );
 });
 
 // 웹 서버
