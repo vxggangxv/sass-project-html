@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+@import "susy/susy";
+
+// ---------------------------------------
+// Susy2 글로벌 설정(Global Settings)
+// columns: 컬럼의 개수
+// gutters: 거터(컬럼 간격)
+// column-width: 컬럼 간격 설정
+// math: 동적(Fluid), 정적(Static) 레이아웃 설정
+// gutter-position: 커터 방향 설정 (before, split, inside, 기본값은 after)
+// ---------------------------------------
+/* $susy: (
+	columns: 12,
+	gutters: 1/6
+); */
+$susy: (
+	columns: 12,
+	gutters: 20px/60px,
+//	column-width: 60px,
+//	math: static,
+//	gutter-position: split,
+	flow: rtl,
+	debug: (
+		image: show,
+		color: #69dff8,
+		output: overlay,
+		toggle: top right
+	)
+);
+
+// 그리드 시스템 반투명하게
+body::before {
+	opacity: 0.6;
+}
+
+// 레이아웃 (글로벌 설정 - 줄여서 작성)
+@include layout(6 1/12 after ltr);
+
+// container, span 믹스인
+body {
+	@include container(940px);
+}
+
+.box {
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	background-color: yellow;
+}
+
+.box:nth-child(2n) {
+	background-color: aqua;
+}
+
+@include with-layout(3 1/28) {
+	@for $i from 1 through 6 {
+		.box#{$i} {
+			margin-bottom: 1rem;
+			@if $i%3 == 0 {
+				@include span(1 omega);
+			} @else {
+				@include span(1);
+			}
+		}
+	}
+}
+@for $i from 7 through 12 {
+	.box#{$i} {
+		margin-bottom: 1rem;
+		@if $i%6 == 0 {
+			@include span(1 omega);	}
+		@else {
+			@include span(1);	}
+	}
+}
+
+// .box5 배경 색상 투명으로 설정
+// .box13-15 영역 색상 구분을 위해
+.box5 {
+	background-color: transparent;
+}
+// .box13-14 각각 1/3만큼 가로폭 설정
+// [1]  .box13,  [2]  .box14
+.box13, .box14 {
+	@include span(1 of 3);
+}
+
+// .box15는 3번째 위치에 1/3만큼 가로폭 설정
+// [3]  .box15
+// at 3 대신 omega 또는 last키워드를 사용해도 동일
+.box15 {
+	//@include span(1 at 3 of 3);
+	@include span(1 of 3 last);
+}
+
+/* %default {
+	text-align: center;
+	padding: 50px 0;
+} */
+
+/* .box1 {
+	@include span(13 of 24);
+	@extend %default;
+	background-color: skyblue;
+}
+.box2 {
+	@include span(3 of 24 omega);
+	@extend %default;
+	background-color: yellow;
+} */

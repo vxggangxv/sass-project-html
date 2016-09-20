@@ -1,0 +1,42 @@
+@charset "utf-8"
+// -------------------------------------------
+// 라이브러리 호출
+// Bourbon (http://bourbon.io)
+// Susy (http://susy.oddbird.net)
+// -------------------------------------------
+@import "susy/susy"
+
+// -------------------------------------------
+// container, span 믹스인
+// -------------------------------------------
+body 
+	+container(940px)
+
+%default
+	text-align: center
+	padding: 50px 0
+
+.box1
+	+span(2)
+	@extend %default
+	background-color: skyblue
+.box2
+	+span(2 omega)
+	@extend %default
+	background-color: yellow
+.box3
+	+span(8 of 12)
+	@extend %default
+	background-color: blue
+.box4
+	+span(4 of 12 omega)
+	@extend %default
+	background-color: red
+.box5
+	+span(13 of 24)
+	@extend %default
+	background-color: skyblue
+.box6
+	+span(3 of 24 last)
+	@extend %default
+	background-color: yellow

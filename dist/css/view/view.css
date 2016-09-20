@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  float: left;
+}
+
+#main {
+  border: 1px solid #eee;
+  background: #999;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#nav {
+  position: relative;
+  width: 980px;
+  height: 60px;
+  margin: 0 auto;
+}
+#nav li {
+  width: 20%;
+}
+#nav a {
+  text-align: center;
+  display: block;
+  width: 100%;
+}

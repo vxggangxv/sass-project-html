@@ -1,0 +1,57 @@
+body {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6 {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.box1 {
+  width: 47.36842%;
+  float: left;
+  margin-right: 5.26316%;
+  background-color: skyblue;
+}
+
+.box2 {
+  width: 47.36842%;
+  float: right;
+  margin-right: 0;
+  background-color: yellow;
+}
+
+.box3 {
+  width: 66.10169%;
+  float: left;
+  margin-right: 1.69492%;
+  background-color: blue;
+}
+
+.box4 {
+  width: 32.20339%;
+  float: right;
+  margin-right: 0;
+  background-color: red;
+}
+
+.box5 {
+  width: 53.78151%;
+  float: left;
+  margin-right: 0.84034%;
+  background-color: skyblue;
+}
+
+.box6 {
+  width: 11.76471%;
+  float: right;
+  margin-right: 0;
+  background-color: yellow;
+}

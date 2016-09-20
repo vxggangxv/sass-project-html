@@ -1,0 +1,182 @@
+/* $susy: (
+	columns: 12,
+	gutters: 1/6
+); */
+body::before {
+  opacity: 0.6;
+}
+
+body {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+head {
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
+  color: #333;
+  background: rgba(255, 255, 255, 0.25);
+}
+head:before {
+  content: "|||";
+  display: block;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+head:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: red;
+}
+head:hover ~ body, head:hover ~ body body {
+  position: relative;
+}
+head:hover ~ body:before, head:hover ~ body body:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: " ";
+  z-index: 998;
+  background-image: linear-gradient(to right, #69dff8, #b2effb 92.30769%, transparent 92.30769%);
+  background-size: 16.88312%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+}
+
+.box {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background-color: yellow;
+}
+
+.box:nth-child(2n) {
+  background-color: aqua;
+}
+
+.box1 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: left;
+  margin-right: 1.16279%;
+}
+
+.box2 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: left;
+  margin-right: 1.16279%;
+}
+
+.box3 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: right;
+  margin-right: 0;
+}
+
+.box4 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: left;
+  margin-right: 1.16279%;
+}
+
+.box5 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: left;
+  margin-right: 1.16279%;
+}
+
+.box6 {
+  margin-bottom: 1rem;
+  width: 32.55814%;
+  float: right;
+  margin-right: 0;
+}
+
+.box7 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: left;
+  margin-right: 1.2987%;
+}
+
+.box8 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: left;
+  margin-right: 1.2987%;
+}
+
+.box9 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: left;
+  margin-right: 1.2987%;
+}
+
+.box10 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: left;
+  margin-right: 1.2987%;
+}
+
+.box11 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: left;
+  margin-right: 1.2987%;
+}
+
+.box12 {
+  margin-bottom: 1rem;
+  width: 15.58442%;
+  float: right;
+  margin-right: 0;
+}
+
+.box5 {
+  background-color: transparent;
+}
+
+.box13, .box14 {
+  width: 31.57895%;
+  float: left;
+  margin-right: 2.63158%;
+}
+
+.box15 {
+  width: 31.57895%;
+  float: right;
+  margin-right: 0;
+}
+
+/* %default {
+	text-align: center;
+	padding: 50px 0;
+} */
+/* .box1 {
+	@include span(13 of 24);
+	@extend %default;
+	background-color: skyblue;
+}
+.box2 {
+	@include span(3 of 24 omega);
+	@extend %default;
+	background-color: yellow;
+} */
