@@ -1,0 +1,159 @@
+@charset "UTF-8";
+.box {
+  text-align: center;
+  padding: 50px 0;
+  background-color: orange;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.box:nth-child(2n) {
+  background-color: navy;
+}
+
+/* 모바일 퍼스트(Mobile First) */
+@media (max-width: 719px) {
+  body {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+  }
+  body:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  .box2 {
+    width: 48.27586%;
+    float: left;
+    margin-right: 3.44828%;
+  }
+
+  .box3 {
+    width: 48.27586%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .box4 {
+    clear: both;
+  }
+
+  .box5 {
+    width: 48.27586%;
+    float: right;
+    margin-left: 3.44828%;
+  }
+
+  .box6 {
+    width: 48.27586%;
+    float: left;
+    margin-left: 0;
+  }
+}
+/* 테블릿(Table) */
+@media (min-width: 720px) and (max-width: 1024px) {
+  body {
+    max-width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  .box1 {
+    width: 66.21622%;
+    float: left;
+    margin-right: 1.35135%;
+  }
+
+  .box2 {
+    width: 32.43243%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .box3 {
+    width: 32.43243%;
+    float: left;
+    margin-right: 1.35135%;
+  }
+
+  .box4 {
+    width: 66.21622%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .box5 {
+    width: 48.97959%;
+    float: left;
+    margin-right: 2.04082%;
+  }
+
+  .box6 {
+    width: 48.97959%;
+    float: right;
+    margin-right: 0;
+  }
+}
+/* 데스크탑(Desktop) */
+@media (min-width: 1025px) {
+  body {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  .box {
+    height: 13.75rem;
+    line-height: 13.75rem;
+  }
+
+  .box1 {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .box2 {
+    width: 15.58442%;
+    float: left;
+    margin-right: 1.2987%;
+  }
+
+  .box3 {
+    width: 66.23377%;
+    float: left;
+    margin-right: 1.2987%;
+  }
+
+  .box4 {
+    width: 15.58442%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .box5 {
+    width: 66.23377%;
+    float: left;
+    margin-right: 1.2987%;
+  }
+
+  .box6 {
+    width: 32.46753%;
+    float: right;
+    margin-right: 0;
+  }
+}

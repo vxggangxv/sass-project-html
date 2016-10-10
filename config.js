@@ -31,6 +31,10 @@ module.exports = function() {
 				src: bower_path + '/susy/sass/**',
 				dest: source + '/sass/susy'
 			},
+			breakpoint: {
+				src: bower_path + '/breakpoint-sass/stylesheets/**',
+				dest: source + '/sass/breakpoint'
+			},
 			fontawesome: {
 				src: bower_path + '/fontawesome/**',
 				dest: source + '/sass/fontawesome'
@@ -39,7 +43,8 @@ module.exports = function() {
 				src: [
 					bower_path + '/**',
 					'!' + bower_path + '/{susy, susy/**}',
-					'!' + bower_path + '/{fontawesome, fontawesome/**}'
+					'!' + bower_path + '/{fontawesome, fontawesome/**}',
+					'!' + bower_path + '/{breakpoint-sass,breakpoint-sass/**}'
 				],
 				dest: development + '/js/libs'
 			}

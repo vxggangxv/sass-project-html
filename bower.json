@@ -31,6 +31,9 @@
     "susy": [
       "sass/**"
     ],
+    "breakpoint-sass": [
+      "stylesheets/**"
+    ],
     "modernizr": [
       "modernizr.js"
     ],

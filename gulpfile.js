@@ -58,6 +58,8 @@ gulp.task('bower:copy', function() {
 	// susy
 	gulp.src(config.bower.susy.src)
 		.pipe( gulp.dest(config.bower.susy.dest) );
+	gulp.src(config.bower.breakpoint.src)
+		.pipe( gulp.dest(config.bower.breakpoint.dest) );
 	// fontawesome
 	gulp.src(config.bower.fontawesome.src)
 		.pipe( gulp.dest(config.bower.fontawesome.dest) );

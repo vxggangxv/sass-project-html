@@ -1,0 +1,72 @@
+@charset "utf-8"
+
+// Breakpoint 모듈 호출
+@import "breakpoint/breakpoint"
+
+/* 모바일 퍼스트 */
+html, a
+	-webkit-font-smoothing: antialiased
+	font-size: 16px
+
+/* 화면 폭 480px 이상 960px 미만 */
++breakpoint(480px 959px)
+	html
+		font-size: 14px
+
+/* 화면 폭 960px 이상 */
++breakpoint(960px)
+	html
+		overflow-y: visible
+
+// 쿼리
+$query: print 16cm
+
+// 브레이크포인트 믹스인 사용
++breakpoint($query)
+	body
+		background-color: #fff !important
+		color: #333 !important
+
+$query: "not print" 1200px
+
++breakpoint($query)
+	main
+		overflow: hidden
+
+$query: max-width 480px
+
++breakpoint($query)
+	.sidebar
+		float: none
+		margin-right: 0
+
+$query: height 480px 960px
+
++breakpoint($query)
+	.sidebar
+		float: none
+		margin-right: 0
+
+$query: "only screen" (min-width 768px) (max-height 1024px)
+
++breakpoint($query)
+	.fixBar
+		position: fixed
+		top: 0
+
+$query: (orientation landscape) (device-aspect-ratio 16/9)
+
++breakpoint($query)
+	/* 회전방향이 풍경사진처럼 가로폭이 길고, */
+	/* 가로/세로 종횡 비율이 16:9인 장치 기기(Device)에 적용 */
+
+
+// https://github.com/at-import/breakpoint/wiki
+// 초기설정 덮어쓰기
+//$breakpoint-default-feature: max-width
+//$breakpoint-default-pair: height
+$breakpoint-to-ems: true
+
+$query: 320px 640px
++breakpoint($query)
+	/* 초기 설정 값을 변경하는 예 */

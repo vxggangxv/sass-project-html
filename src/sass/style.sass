@@ -1,7 +1,9 @@
 @charset "utf-8"
 
 // Compass 라이브러리 CSS3 믹스인 호출
-@import "compass/css3"
+//@import "compass/css3"
+// bourbon 믹스인
+@import "bourbon/bourbon"
 // Comments 주석
 @import "parts/comments"
 // Sass 변수 (Variables: $)
@@ -109,3 +111,13 @@ body
 .notification
 	+position(fixed, 20px)
 	+size(24rem, 10rem)
+
+// css3 툴팁
+.tooltip
+	+position
+	+size(300px, 145px)
+	&::after
+		content: ''
+		+position(absolute, $left: 50%, $bottom: 0)
+		margin-left: (300px)/2
+		+triangle(12px, gray, down)

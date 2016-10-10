@@ -1,0 +1,97 @@
+@charset "utf-8"
+
+@import "bourbon/bourbon"
+@import "susy/susy"
+@import "breakpoint/breakpoint"
+
+// ------------------------
+// Susy2 + Breakpoint = RWD
+//-------------------------
+
+
+.box 
+	text-align: center
+	padding: 50px 0
+	background-color: orange
+	margin-bottom: 12px
+	color: #fff
+.box:nth-child(2n)
+	background-color: navy
+/* 모바일 퍼스트(Mobile First) */
+// 레이아웃 그리드 설정
++layout(2 1/14)
++breakpoint(max-width 719px)
+	// body컨테이너 요소 설정
+	// 상/하 공간 설정
+	body
+		+container(90%)
+		margin:
+			top: rem(25px)
+			bottom: rem(25px)
+
+
+	// 2컬럼 레이아웃(.box2, .box3)
+	// .box4 요소 clear
+	.box2
+		+span(1)
+	.box3
+		+span(1 last)
+	.box4
+		clear: both
+
+	// 지역 레이아웃 그리드 설정
+	// 방향 오른쪽에서 왼쪽으로
+	+with-layout(rtl)
+		// 2컬럼 레이아웃(.box5, .box6)
+		.box5
+			+span(1)
+		.box6
+			+span(1 omega)
+/* 테블릿(Table) */
+// 전역 레이아웃 그리드 설정
++layout(3 1/24)
++breakpoint(720px 1024px)
+	// body 컨테이너 요소 설정
+	body
+		+container(86%)
+	// 2:1, 1:2, 1:1 컬럼 레이아웃 디자인
+	.box1
+		+span(2)
+	.box2
+		+span(1 last) // 각 행의 끝
+	.box3
+		+span(1)
+	.box4
+		+span(2 last) // 각 행의 끝
+		//clear: none // 모바일 퍼스트 설정 초기화
+	.box5
+		+span(1 of 2)
+		//margin-left: 0	//모바일 퍼스트 설정 초기화
+	.box6
+		+span(1 of 2 last)	// 각 행의 끝
+
+/* 데스크탑(Desktop) */
+// 전역 레이아웃 그리드 설정
++layout(6 1/12)
++breakpoint(1025px)
+	// body 컨테이너 요소 설정
+	body
+		+container(960px)
+	.box
+		$h: 220px
+		height: rem($h)
+		line-height: rem($h)
+
+	// 1, 1:4:1, 2:1 컬럼 레이아웃 디자인
+	.box1
+		+span(6 last)
+	.box2
+		+span(1)
+	.box3
+		+span(4 at 2)
+	.box4
+		+span(1 last)
+	.box5
+		+span(4)
+	.box6
+		+span(2 last)

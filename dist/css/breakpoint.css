@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* 모바일 퍼스트 */
+html, a {
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+/* 화면 폭 480px 이상 960px 미만 */
+@media (min-width: 480px) and (max-width: 959px) {
+  html {
+    font-size: 14px;
+  }
+}
+/* 화면 폭 960px 이상 */
+@media (min-width: 960px) {
+  html {
+    overflow-y: visible;
+  }
+}
+@media print and (min-width: 16cm) {
+  body {
+    background-color: #fff !important;
+    color: #333 !important;
+  }
+}
+@media not print and (min-width: 1200px) {
+  main {
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar {
+    float: none;
+    margin-right: 0;
+  }
+}
+@media (min-height: 480px) and (max-height: 960px) {
+  .sidebar {
+    float: none;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-height: 1024px) {
+  .fixBar {
+    position: fixed;
+    top: 0;
+  }
+}
+@media (orientation: landscape) and (device-aspect-ratio: 1.77778) {
+  /* 회전방향이 풍경사진처럼 가로폭이 길고, */
+  /* 가로/세로 종횡 비율이 16:9인 장치 기기(Device)에 적용 */
+}
+@media (min-width: 20em) and (max-width: 40em) {
+  /* 초기 설정 값을 변경하는 예 */
+}
